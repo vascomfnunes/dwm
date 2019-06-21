@@ -97,23 +97,19 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_Down,   pushdown,       {0} },
     { MODKEY|ShiftMask,             XK_Up,     pushup,         {0} },
     { MODKEY,                       XK_l,      switchcol,      {0} },
-
     { MODKEY,                       XK_j,      incnmaster,     {.i = +1 } },
     { MODKEY,                       XK_k,      incnmaster,     {.i = -1 } },
-
     { MODKEY,                       XK_Tab,    view,           {0} },
     { MODKEY,                       XK_w,      killclient,     {0} },
     { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY,                       XK_t,      togglermaster,  {0} },
-
     { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
     { MODKEY,                       XK_d,      setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
     { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[3]} },
     { MODKEY,                       XK_space,  setlayout,      {0} },
     { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-
     { 0,                            XF86MonBrightnessUp, spawn,{.v = brightnessup } },
     { 0,                            XF86MonBrightnessDown, spawn,{.v = brightnessdown } },
     { 0,                            XF86KbdBrightnessUp, spawn,{.v = keyboardbrightnessup } },
@@ -131,7 +127,6 @@ static Key keys[] = {
     { MODKEY,						XK_Up,						pushup,				{0} },
     { MODKEY,				        XK_z,					    zoom,				{0} },
     { MODKEY,						XK_Tab,						view,				{0} },
-
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
     TAGKEYS(                        XK_3,                      2)
