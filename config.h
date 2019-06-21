@@ -126,7 +126,6 @@ static Key keys[] = {
     { MODKEY,						XK_Down,					pushdown,			{0} },
     { MODKEY,						XK_Up,						pushup,				{0} },
     { MODKEY,				        XK_z,					    zoom,				{0} },
-    { MODKEY,						XK_Tab,						view,				{0} },
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
     TAGKEYS(                        XK_3,                      2)
