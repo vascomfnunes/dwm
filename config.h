@@ -12,35 +12,47 @@ static const int showsystray        = 0;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 4;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 12;        /* vertical padding for statusbar */
+static const int vertpadbar         = 10;        /* vertical padding for statusbar */
 static const int rmaster            = 0;        /* 1 means master-area is initially on the right */
 
-static const char buttonbar[]       = "";
+static const char buttonbar[]       = "vasco";
 static const char *fonts[]          = { "Hack Nerd Font Mono:size=9" };
 static const char col_bg[]          = "#073642";
 static const char col_fg_norm[]     = "#ffaf00";
 static const char col_fg_sel[]      = "#859900";
 static const char col_border[]      = "black";
 
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
+static const char col_black[]       = "#000000";
+static const char col_red[]         = "#ff0000";
+static const char col_yellow[]      = "#ffff00";
+static const char col_white[]       = "#ffffff";
+
 static const char *colors[][3]      = {
     /*                fg          bg      border     */
     [SchemeNorm]  = { "white",    col_bg, col_border },
     [SchemeSel]   = { col_fg_sel, col_bg, col_border },
     [SchemeTitle] = { col_bg,     col_bg, col_border },
+	[SchemeNorm]  = { col_gray3, col_bg,  col_bg },
+	[SchemeSel]   = { col_gray4, col_cyan,   col_cyan },
+	[SchemeWarn]  = { col_black, col_yellow, col_red },
+	[SchemeUrgent]=	{ col_white, col_red,    col_red }
 };
 
 /* static const char *tags[] = { "", "", "", "", "", "", "", "", "" }; */
 /* static const char *tagsalt[] = { "", "", "", "", "", "", "", "", "" }; */
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "" };
+static const char *tags[] = { "1", "2", "3", "4", "5" };
 static const Rule rules[] = {
     /* xprop(1):
      *	WM_CLASS(STRING) = instance, class
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    { NULL,       NULL,       NULL,       0,            False,       -1 },
+    { NULL,       NULL,       "mpv",       0,            True,       -1 },
 };
 
 /* layout(s) */
@@ -117,20 +129,20 @@ static Key keys[] = {
     { 0,                            XF86AudioRaiseVolume, spawn,{.v = volumeup } },
     { 0,                            XF86AudioLowerVolume, spawn,{.v = volumedown } },
     { 0,                            XF86AudioMute, spawn,{.v = volumemute } },
-    { MODKEY,						XK_Right,					focusstack,			{.i = +1 } },
-    { MODKEY,						XK_Left,					focusstack,			{.i = -1 } },
-    { MODKEY,						XK_i,						incnmaster,			{.i = +1 } },
-    { MODKEY,						XK_d,						incnmaster,			{.i = -1 } },
-    { MODKEY|ShiftMask,				XK_Left,					setmfact,			{.f = -0.05} },
-    { MODKEY|ShiftMask,				XK_Right,					setmfact,			{.f = +0.05} },
-    { MODKEY,						XK_Down,					pushdown,			{0} },
-    { MODKEY,						XK_Up,						pushup,				{0} },
-    { MODKEY,				        XK_z,					    zoom,				{0} },
-    TAGKEYS(                        XK_1,                      0)
-    TAGKEYS(                        XK_2,                      1)
-    TAGKEYS(                        XK_3,                      2)
-    TAGKEYS(                        XK_4,                      3)
-    TAGKEYS(                        XK_5,                      4)
+    { MODKEY,						XK_Right,  focusstack,	   {.i = +1 } },
+    { MODKEY,						XK_Left,   focusstack,	   {.i = -1 } },
+    { MODKEY,						XK_i,	   incnmaster,	   {.i = +1 } },
+    { MODKEY,						XK_d,	   incnmaster,	   {.i = -1 } },
+    { MODKEY|ShiftMask,				XK_Left,   setmfact,	   {.f = -0.05} },
+    { MODKEY|ShiftMask,				XK_Right,  setmfact,	   {.f = +0.05} },
+    { MODKEY,						XK_Down,   pushdown,	   {0} },
+    { MODKEY,						XK_Up,	   pushup,		   {0} },
+    { MODKEY,				        XK_z,	   zoom,		   {0} },
+    TAGKEYS(                        XK_1,      0)
+    TAGKEYS(                        XK_2,      1)
+    TAGKEYS(                        XK_3,      2)
+    TAGKEYS(                        XK_4,      3)
+    TAGKEYS(                        XK_5,      4)
 };
 
 /* button definitions */
