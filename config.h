@@ -12,7 +12,7 @@ static const int showsystray        = 0;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 4;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 10;        /* vertical padding for statusbar */
+static const int vertpadbar         = 5;        /* vertical padding for statusbar */
 static const int rmaster            = 0;        /* 1 means master-area is initially on the right */
 
 static const char buttonbar[]       = "vasco";
