@@ -4,9 +4,9 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack:size=12" };
-static const char dmenufont[]       = "Hack:size=12";
+static const int topbar             = 0;        /* 0 means bottom bar */
+static const char *fonts[]          = { "Jetbrains Mono Nerd Font Mono:size=12" };
+static const char dmenufont[]       = "Jetbrains Mono Nerd Font Mono:size=12";
 static const char col_background[]              = "#32302f";
 static const char col_foreground[]              = "#d4be98";
 static const char col_active_background[]       = "#32302f";
@@ -20,7 +20,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "[1 www]", "[2 email]", "[3 nvim]", "[4 media]", "[5 comms]", "[6 zsh]" };
+static const char *tags[] = { "[1 www]", "[2 tmux]" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -28,7 +28,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "brave",     NULL,       NULL,       1 << 0,            0,           -1 },
 };
 
 /* layout(s) */
