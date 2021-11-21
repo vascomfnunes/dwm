@@ -1,12 +1,13 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Jetbrains Mono Nerd Font Mono:size=12" };
-static const char dmenufont[]       = "Jetbrains Mono Nerd Font Mono:size=12";
+static const char *fonts[]          = { "JetbrainsMonoNL Nerd Font:size=12" };
+static const char dmenufont[]       = "JetbrainsMonoNL Nerd Font:size=12";
 static const char col_background[]              = "#32302f";
 static const char col_foreground[]              = "#d4be98";
 static const char col_active_background[]       = "#32302f";
@@ -45,7 +46,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
